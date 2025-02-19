@@ -2,8 +2,11 @@
 *The Best Personal Human Individual System to Live* 🔹  
 
 ### 📌 **Apa itu ANTYO System?**  
+
 📌 ANTYO System adalah proyek gamifikasi self-optimization berbasis AI & Machine Learning, yang membantu pengguna mengelola hidup lebih efisien, berbasis data, dan terus beradaptasi dengan perubahan.
+
 🧠 Ditenagai oleh Azul & Azel, AI Bestfriends, ANTYO System tidak hanya menjadi asisten digital, tetapi juga partner yang membimbingmu melalui leveling system—di mana setiap pencapaian dalam hidup meningkatkan XP, level, dan statistik pribadimu.
+
 🚀 Gabungkan teknologi AI, ML, dan gamifikasi untuk mengubah hidupmu menjadi petualangan self-optimization yang seru, terstruktur, dan progresif!
 
 ### 🌎 **Visi:**  
