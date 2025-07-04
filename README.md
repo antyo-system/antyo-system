@@ -20,18 +20,6 @@ Time & Task Management, XP System, Finance Tracking, Relationship Optimization, 
 
 ---
 
-
-### 🔥 Progress Saat Ini
-🚀 **Backend Progress**:
-- ✅ Setup FastAPI + PostgreSQL
-- ✅ Struktur Database dengan SQLAlchemy
-- ✅ Endpoint User & Task Management
-- ⏳ API Leaderboard & Finance Tracking (Coming Soon)
-
-📌 **Next**: Deployment ke Railway & integrasi dengan Flutter!
-
----
-
 ### 📢 Cara Berkontribusi  
 💡 **Mau ikut berkontribusi di ANTYO System?**  
 Fork repo ini dan clone ke local.  
