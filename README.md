@@ -127,7 +127,8 @@ antyo-system/
 
 🔮 Long-Term Vision
 - ANTYO is not just an app—it’s a Life Operating System that will evolve into:
-- Wearable Device — a health & life tracker that seamlessly integrates with your habits, goals, and environment.
+- Wearable Device & Home Device — a health & life tracker that seamlessly integrates with your habits, goals, and environment.
 - Personal AI Companion — Azul & Azel evolving into fully adaptive agents that understand your preferences, mood, and long-term goals.
 - Personal Robot — physical assistant capable of interacting with your environment, managing tasks, and supporting your lifestyle.
 - Super App & Smart Home Hub — all life management tools, AI, and IoT devices unified into one seamless ecosystem.
+
