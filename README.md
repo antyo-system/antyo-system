@@ -78,14 +78,15 @@ Focus:
 - Time & Story modules
 
 ## 6. Roadmap
-Phase 1: Core Life OS (local-first)
-Phase 2: Personal AI agents
-Phase 3: Automation, IoT & smart environment
+- Phase 1: Core Life OS (local-first)
+- Phase 2: Personal AI agents
+- Phase 3: Automation, IoT & smart environment
 
 ## 7. Contribution
+```
 ANTYO is open for collaboration.
 Engineers, AI researchers, designers are welcome.
----
+```
 
 ## Long-Term Vision
 
@@ -100,4 +101,5 @@ Long-term, ANTYO is envisioned as:
 The ultimate goal is simple:
 To help humans live consciously, intentionally, and sustainably
 in an increasingly complex world.
+
 
