@@ -23,7 +23,7 @@ Guided by two AI companions:
 
 ## 4. How It Works (High-Level)
 ANTYO continuously collects life signals, analyzes patterns,
-and feeds insights back to the user through AI guidance and gamified feedback.
+and feeds insights back to the user through AI guidance and gamified feedback. only where the user allows it.
 
 ```txt
         ┌───────────────┐
@@ -79,19 +79,39 @@ and feeds insights back to the user through AI guidance and gamified feedback.
 
 
 ```
-## 5. Current Focus
+### 5. Data Autonomy & Trust (Core Principle)
+ANTYO prioritizes extreme transparency and user control.
+
+This includes:
+- Per-Domain Control
+Users can choose which life domains the AI may analyze
+(e.g. enable Time & Finance, disable Relationships).
+
+- Transparent Data Awareness
+Users can see what data is being collected and how it is used.
+
+- SABBATH MODE
+```
+single switch that pauses:
+  - data collection
+  - AI analysis
+  - gamification
+  - automation
+```
+ANTYO must always feel like an assistant, not a surveillance system.
+## 6. Current Focus
 ANTYO is currently in early-stage development.
 Focus:
 - Core data model
 - AI feedback loop
 - Time & Story modules
 
-## 6. Roadmap
+## 7. Roadmap
 - Phase 1: Core Life OS (local-first)
 - Phase 2: Personal AI agents
 - Phase 3: Automation, IoT & smart environment
 
-## 7. Contribution
+## 8. Contribution
 ```
 ANTYO is open for collaboration.
 Engineers, AI researchers, designers are welcome.
@@ -110,6 +130,7 @@ Long-term, ANTYO is envisioned as:
 The ultimate goal is simple:
 To help humans live consciously, intentionally, and sustainably
 in an increasingly complex world.
+
 
 
 
