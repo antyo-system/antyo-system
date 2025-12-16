@@ -33,21 +33,21 @@ and feeds insights back to the user through AI guidance and gamified feedback.
                 │
                 ▼
 ┌────────────────────────────────────┐
-│     LIFE DATA COLLECTION            │
-│  Time • Finance • Health            │
-│  Relationships • Story              │
+│     LIFE DATA COLLECTION           │
+│  Time • Finance • Health           │
+│  Relationships • Story             │
 └───────────────┬────────────────────┘
                 │
                 ▼
 ┌────────────────────────────────────┐
-│     UNIFIED USER STATE              │
-│  (Single Source of Truth)           │
+│     UNIFIED USER STATE             │
+│  (Single Source of Truth)          │
 └───────────────┬────────────────────┘
                 │
                 ▼
 ┌────────────────────────────────────┐
-│        AI ENGINE                    │
-│  Azul — Strategy & Optimization     │
+│        AI ENGINE                   │
+│  Azul — Strategy & Optimization    │
 │  Azel — Emotion & Sustainability   │
 └───────────────┬────────────────────┘
                 │
@@ -60,21 +60,21 @@ and feeds insights back to the user through AI guidance and gamified feedback.
                 │
                 ▼
 ┌────────────────────────────────────┐
-│     INSIGHTS & FEEDBACK             │
-│  Plans • Missions • Emotional Cues  │
-│  Progress Visualization             │
+│     INSIGHTS & FEEDBACK            │
+│  Plans • Missions • Emotional Cues │
+│  Progress Visualization            │
 └───────────────┬────────────────────┘
                 │
                 ▼
 ┌────────────────────────────────────┐
-│     AUTOMATION LAYER (Optional)     │
-│  Tasks • Environment • IoT          │
+│     AUTOMATION LAYER (Optional)    │
+│  Tasks • Environment • IoT         │
 └───────────────┬────────────────────┘
                 │
                 ▼
 ┌────────────────────────────────────┐
-│     USER BEHAVIOR CHANGES           │
-│  (Feedback Loop Continues)          │
+│     USER BEHAVIOR CHANGES          │
+│  (Feedback Loop Continues)         │
 └────────────────────────────────────┘
 
 
@@ -110,6 +110,7 @@ Long-term, ANTYO is envisioned as:
 The ultimate goal is simple:
 To help humans live consciously, intentionally, and sustainably
 in an increasingly complex world.
+
 
 
 
