@@ -53,9 +53,9 @@ and feeds insights back to the user through AI guidance and gamified feedback.
                 │
                 ▼
 ┌────────────────────────────────────┐
-│     GAMIFICATION ENGINE             │
-│  XP • Levels • Quests • Streaks     │
-│  Cooldowns • Penalties • Rewards    │
+│     GAMIFICATION ENGINE            │
+│  XP • Levels • Quests • Streaks    │
+│  Cooldowns • Penalties • Rewards   │
 └───────────────┬────────────────────┘
                 │
                 ▼
@@ -110,6 +110,7 @@ Long-term, ANTYO is envisioned as:
 The ultimate goal is simple:
 To help humans live consciously, intentionally, and sustainably
 in an increasingly complex world.
+
 
 
 
