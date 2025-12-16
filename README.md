@@ -26,12 +26,12 @@ ANTYO continuously collects life signals, analyzes patterns,
 and feeds insights back to the user through AI guidance and gamified feedback.
 
 ```txt
-┌───────────────┐
-│     USER      │
-│  (Actions)    │
-└───────┬───────┘
-        │
-        ▼
+        ┌───────────────┐
+        │     USER      │
+        │  (Actions)    │
+        └───────┬───────┘
+                │
+                ▼
 ┌────────────────────────────────────┐
 │     LIFE DATA COLLECTION            │
 │  Time • Finance • Health            │
@@ -53,8 +53,16 @@ and feeds insights back to the user through AI guidance and gamified feedback.
                 │
                 ▼
 ┌────────────────────────────────────┐
+│     GAMIFICATION ENGINE             │
+│  XP • Levels • Quests • Streaks     │
+│  Cooldowns • Penalties • Rewards    │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
 │     INSIGHTS & FEEDBACK             │
-│  Plans • Guidance • Emotion • XP    │
+│  Plans • Missions • Emotional Cues  │
+│  Progress Visualization             │
 └───────────────┬────────────────────┘
                 │
                 ▼
@@ -68,6 +76,7 @@ and feeds insights back to the user through AI guidance and gamified feedback.
 │     USER BEHAVIOR CHANGES           │
 │  (Feedback Loop Continues)          │
 └────────────────────────────────────┘
+
 
 ```
 ## 5. Current Focus
@@ -101,6 +110,7 @@ Long-term, ANTYO is envisioned as:
 The ultimate goal is simple:
 To help humans live consciously, intentionally, and sustainably
 in an increasingly complex world.
+
 
 
 
