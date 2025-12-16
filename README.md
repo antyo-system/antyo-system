@@ -25,44 +25,51 @@ Guided by two AI companions:
 ANTYO continuously collects life signals, analyzes patterns,
 and feeds insights back to the user through AI guidance and gamified feedback.
 
-┌────────────┐
-│   USER     │
-│ Actions    │
-└─────┬──────┘
-      │
-      ▼
-┌────────────┐
-│ Life Data  │  ← Time / Finance / Health / Relationship / Story
-│ Collection │
-└─────┬──────┘
-      │
-      ▼
-┌────────────┐
-│ Unified    │
-│ User State │  ← single source of truth
-└─────┬──────┘
-      │
-      ▼
-┌────────────┐
-│ AI Engine  │
-│ (Azul &   │
-│  Azel)    │
-└─────┬──────┘
-      │
-      ▼
-┌────────────┐
-│ Feedback   │
-│ Loop       │  ← insights, plan, emotion, XP
-└─────┬──────┘
-      │
-      ▼
-┌────────────┐
-│ Automation │
-│ (Tasks /  │
-│ Env / IoT)│
-└────────────┘
+```txt
+┌───────────────┐
+│     USER      │
+│  (Actions)    │
+└───────┬───────┘
+        │
+        ▼
+┌────────────────────────────────────┐
+│     LIFE DATA COLLECTION            │
+│  Time • Finance • Health            │
+│  Relationships • Story              │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│     UNIFIED USER STATE              │
+│  (Single Source of Truth)           │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│        AI ENGINE                    │
+│  Azul — Strategy & Optimization     │
+│  Azel — Emotion & Sustainability   │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│     INSIGHTS & FEEDBACK             │
+│  Plans • Guidance • Emotion • XP    │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│     AUTOMATION LAYER (Optional)     │
+│  Tasks • Environment • IoT          │
+└───────────────┬────────────────────┘
+                │
+                ▼
+┌────────────────────────────────────┐
+│     USER BEHAVIOR CHANGES           │
+│  (Feedback Loop Continues)          │
+└────────────────────────────────────┘
 
-
+```
 ## 5. Current Focus
 ANTYO is currently in early-stage development.
 Focus:
@@ -78,6 +85,7 @@ Phase 3: Automation, IoT & smart environment
 ## 7. Contribution
 ANTYO is open for collaboration.
 Engineers, AI researchers, designers are welcome.
+---
 
 ## Long-Term Vision
 
@@ -92,3 +100,4 @@ Long-term, ANTYO is envisioned as:
 The ultimate goal is simple:
 To help humans live consciously, intentionally, and sustainably
 in an increasingly complex world.
+
