@@ -1,5 +1,6 @@
 # ANTYO SYSTEM
 Autonomous Life Optimization Platform
+
 ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
 ## 1. Vision
@@ -131,6 +132,7 @@ Long-term, ANTYO is envisioned as:
 The ultimate goal is simple:
 To help humans live consciously, intentionally, and sustainably
 in an increasingly complex world.
+
 
 
 
