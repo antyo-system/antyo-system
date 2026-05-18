@@ -118,14 +118,6 @@ Focus:
 
 ## 8. Contribution
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 ANTYO is open for collaboration.
 Engineers, AI researchers, designers are welcome.
 ```
