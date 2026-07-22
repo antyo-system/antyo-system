@@ -17,6 +17,8 @@ import {
   Flame,
   Award,
   Sparkles,
+  Zap,
+  Bot,
 } from "lucide-react";
 import { getSabbathState, toggleSabbathMode, getUserStats } from "@/app/lib/storage";
 import { SabbathState, UserStats } from "@/app/lib/types";
@@ -27,7 +29,7 @@ const NAV_ITEMS = [
   { name: "Finance", href: "/finance", icon: Wallet, domain: "finance" },
   { name: "Health", href: "/health", icon: Activity, domain: "health" },
   { name: "Relationship", href: "/relationship", icon: Users, domain: "relationship" },
-  { name: "Story", href: "/story", icon: BookOpen, domain: "story" },
+  { name: "Story & AI Chat", href: "/story", icon: BookOpen, domain: "story" },
 ];
 
 export default function Sidebar() {
@@ -38,11 +40,11 @@ export default function Sidebar() {
     pausedDomains: { time: false, finance: false, health: false, relationship: false, story: false },
   });
   const [stats, setStats] = useState<UserStats>({
-    level: 1,
-    xp: 0,
-    xpToNextLevel: 1000,
-    dailyStreak: 0,
-    lifeBalanceScore: 80,
+    level: 4,
+    xp: 1450,
+    xpToNextLevel: 2000,
+    dailyStreak: 12,
+    lifeBalanceScore: 88,
   });
 
   useEffect(() => {
@@ -57,30 +59,30 @@ export default function Sidebar() {
 
   return (
     <aside
-      className={`relative flex flex-col border-r border-zinc-200 bg-white transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-950 ${
+      className={`relative flex flex-col border-r border-indigo-500/20 bg-zinc-950 text-zinc-100 transition-all duration-300 ${
         collapsed ? "w-20" : "w-64"
       }`}
     >
       {/* Brand Header */}
-      <div className="flex h-16 items-center justify-between border-b border-zinc-200 px-4 dark:border-zinc-800">
+      <div className="flex h-16 items-center justify-between border-b border-indigo-500/20 px-4 bg-zinc-950/80">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-purple-500/20">
-            <Sparkles className="h-5 w-5" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30">
+            <Sparkles className="h-5 w-5 text-amber-300 animate-pulse" />
           </div>
           {!collapsed && (
             <div className="flex flex-col">
-              <span className="text-base font-bold tracking-wider text-zinc-900 dark:text-zinc-100">
-                ANTYO <span className="text-indigo-600 dark:text-indigo-400">ERP</span>
+              <span className="text-base font-black tracking-wider text-white">
+                ANTYO <span className="text-indigo-400 cyber-glow-text">OS</span>
               </span>
-              <span className="text-[10px] font-medium tracking-tight text-zinc-500 dark:text-zinc-400">
-                Life Operating System
+              <span className="text-[10px] font-mono font-bold tracking-widest text-indigo-400">
+                SYSTEM GAME HUD
               </span>
             </div>
           )}
         </Link>
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+          className="rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors"
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
           {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
@@ -88,7 +90,7 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation Menu */}
-      <nav className="flex-1 space-y-1 p-3">
+      <nav className="flex-1 space-y-1.5 p-3">
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href;
           const Icon = item.icon;
@@ -96,17 +98,15 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
+              className={`group flex items-center gap-3 rounded-2xl px-3.5 py-3 text-xs font-bold transition-all ${
                 isActive
-                  ? "bg-indigo-50 text-indigo-700 shadow-sm dark:bg-indigo-950/60 dark:text-indigo-300"
-                  : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+                  ? "bg-gradient-to-r from-indigo-600/80 to-purple-600/80 text-white shadow-lg shadow-indigo-600/20 border border-indigo-400/40"
+                  : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-100"
               }`}
             >
               <Icon
                 className={`h-5 w-5 shrink-0 transition-transform group-hover:scale-110 ${
-                  isActive
-                    ? "text-indigo-600 dark:text-indigo-400"
-                    : "text-zinc-400 dark:text-zinc-500"
+                  isActive ? "text-amber-300" : "text-zinc-500"
                 }`}
               />
               {!collapsed && <span>{item.name}</span>}
@@ -117,20 +117,20 @@ export default function Sidebar() {
 
       {/* Sabbath Mode Banner Card */}
       {!collapsed && (
-        <div className="mx-3 mb-3 rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/20 dark:text-amber-200">
+        <div className="mx-3 mb-3 rounded-2xl border border-amber-500/30 bg-amber-950/30 p-3 text-amber-200">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               {sabbath.enabled ? (
-                <ShieldAlert className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                <ShieldAlert className="h-4 w-4 text-amber-400 animate-bounce" />
               ) : (
-                <Shield className="h-5 w-5 text-zinc-400 dark:text-zinc-500" />
+                <Shield className="h-4 w-4 text-zinc-500" />
               )}
-              <span className="text-xs font-semibold">Sabbath Mode</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Sabbath Mode</span>
             </div>
             <button
               onClick={handleSabbathToggle}
               className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                sabbath.enabled ? "bg-amber-600" : "bg-zinc-300 dark:bg-zinc-700"
+                sabbath.enabled ? "bg-amber-500" : "bg-zinc-800"
               }`}
             >
               <span
@@ -140,34 +140,34 @@ export default function Sidebar() {
               />
             </button>
           </div>
-          <p className="mt-1 text-[11px] leading-tight text-amber-700 dark:text-amber-300">
-            {sabbath.enabled ? "Telemetry & AI analysis paused." : "All life signals active."}
+          <p className="mt-1 text-[10px] leading-tight text-amber-300/80 font-mono">
+            {sabbath.enabled ? "Telemetry & AI paused." : "All systems operational."}
           </p>
         </div>
       )}
 
-      {/* User Stats Card at Bottom */}
-      <div className="border-t border-zinc-200 p-3 dark:border-zinc-800">
-        <div className="flex items-center gap-3 rounded-xl bg-zinc-50 p-2.5 dark:bg-zinc-900/80">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-600 font-bold text-white text-xs shadow-sm">
+      {/* User Level RPG Card at Bottom */}
+      <div className="border-t border-indigo-500/20 p-3 bg-zinc-950">
+        <div className="flex items-center gap-3 rounded-2xl bg-zinc-900/90 border border-indigo-500/30 p-3 shadow-md">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 font-extrabold text-white text-xs shadow-md shadow-indigo-500/30">
             L{stats.level}
           </div>
           {!collapsed && (
             <div className="flex flex-1 flex-col overflow-hidden">
-              <div className="flex items-center justify-between text-xs font-semibold text-zinc-900 dark:text-zinc-100">
-                <span className="truncate">Operator Level</span>
-                <span className="flex items-center gap-1 text-amber-600 dark:text-amber-400">
-                  <Flame className="h-3 w-3" /> {stats.dailyStreak}d
+              <div className="flex items-center justify-between text-xs font-extrabold text-white">
+                <span className="truncate">Operator Lv.{stats.level}</span>
+                <span className="flex items-center gap-1 text-amber-400">
+                  <Flame className="h-3.5 w-3.5" /> {stats.dailyStreak}d
                 </span>
               </div>
-              {/* Progress bar */}
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
+              {/* RPG Progress bar */}
+              <div className="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-zinc-800 border border-zinc-700">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"
+                  className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-sm"
                   style={{ width: `${Math.min(100, (stats.xp / stats.xpToNextLevel) * 100)}%` }}
                 />
               </div>
-              <span className="mt-1 text-[10px] text-zinc-500 dark:text-zinc-400">
+              <span className="mt-1 text-[10px] font-mono text-indigo-300">
                 {stats.xp} / {stats.xpToNextLevel} XP
               </span>
             </div>
