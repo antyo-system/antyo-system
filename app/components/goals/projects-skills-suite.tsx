@@ -49,9 +49,9 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
 ];
 
 const DEFAULT_SKILLS: SkillProgress[] = [
-  { id: "sk-1", name: "Fullstack Engineering", icon: "💻", level: 8, currentXp: 1250, targetXp: 1500, targetHours: 50, completedHours: 42 },
-  { id: "sk-2", name: "UI/UX & Product Design", icon: "🎨", level: 6, currentXp: 820, targetXp: 1000, targetHours: 30, completedHours: 24 },
-  { id: "sk-3", name: "Writing & Reflection", icon: "✍️", level: 5, currentXp: 500, targetXp: 800, targetHours: 20, completedHours: 15 },
+  { id: "sk-1", name: "Fullstack Engineering", icon: "💻", level: 0, currentXp: 0, targetXp: 500, targetHours: 50, completedHours: 0 },
+  { id: "sk-2", name: "UI/UX & Product Design", icon: "🎨", level: 0, currentXp: 0, targetXp: 500, targetHours: 30, completedHours: 0 },
+  { id: "sk-3", name: "Writing & Reflection", icon: "✍️", level: 0, currentXp: 0, targetXp: 500, targetHours: 20, completedHours: 0 },
 ];
 
 export default function ProjectsSkillsSuite() {
