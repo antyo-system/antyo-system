@@ -19,7 +19,9 @@ import {
   CheckCircle2,
   Brain,
   MessageSquare,
-  Bot,
+  Trophy,
+  Target,
+  Zap,
 } from "lucide-react";
 
 import {
@@ -43,7 +45,6 @@ import {
 } from "@/app/lib/types";
 
 import RadarChart, { PillarData } from "@/app/components/radar-chart";
-import AIChatbot from "@/app/components/ai-chatbot";
 
 export default function Dashboard() {
   const [stats, setStats] = useState<UserStats | null>(null);
@@ -235,16 +236,97 @@ export default function Dashboard() {
         </Link>
       </div>
 
-      {/* Main Grid: 5 Pillars RPG Radar Chart & Interactive AI Chatbot */}
+      {/* Main Feature Highlight Grid: 5 Pillars RPG Radar Chart & Operator Quest Stats */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        {/* Left Column (5 Cols): RPG Radar Stat Wheel */}
-        <div className="lg:col-span-5 flex flex-col">
+        {/* Left Featured Column (7 Cols): 5-Pillar RPG Radar Stat Wheel */}
+        <div className="lg:col-span-7 flex flex-col">
           <RadarChart pillars={pillarScores} />
         </div>
 
-        {/* Right Column (7 Cols): Interactive Azul & Azel AI Chatbot */}
-        <div className="lg:col-span-7 flex flex-col">
-          <AIChatbot />
+        {/* Right Column (5 Cols): RPG Quests & Operator Level Stats */}
+        <div className="lg:col-span-5 flex flex-col space-y-4">
+          {/* Operator Leveling & XP Card */}
+          <div className="rounded-3xl border border-indigo-500/30 bg-zinc-900/90 p-5 shadow-2xl space-y-3">
+            <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
+              <div className="flex items-center gap-2">
+                <Trophy className="h-5 w-5 text-amber-400" />
+                <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                  Operator Level & XP Progression
+                </h3>
+              </div>
+              <span className="rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[10px] font-mono font-extrabold text-amber-300">
+                S-CLASS RANK
+              </span>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex justify-between text-xs font-bold text-white">
+                <span>Level {stats.level} Operator</span>
+                <span className="text-amber-400">{stats.xp} / {stats.xpToNextLevel} XP</span>
+              </div>
+              <div className="h-2.5 w-full overflow-hidden rounded-full bg-zinc-950 border border-zinc-800">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md"
+                  style={{ width: `${Math.min(100, (stats.xp / stats.xpToNextLevel) * 100)}%` }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Daily Life Quests Checklist */}
+          <div className="flex-1 rounded-3xl border border-indigo-500/30 bg-zinc-900/90 p-5 shadow-2xl space-y-3">
+            <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
+              <div className="flex items-center gap-2">
+                <Target className="h-5 w-5 text-indigo-400" />
+                <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                  Daily System Quests
+                </h3>
+              </div>
+              <span className="text-[10px] font-mono text-indigo-300">4 Active Quests</span>
+            </div>
+
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span className="text-xs font-semibold text-white">Complete 4 Focus Blocks</span>
+                </div>
+                <span className="rounded-full bg-indigo-500/20 px-2 py-0.5 text-[10px] font-bold text-indigo-300">
+                  +100 XP
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span className="text-xs font-semibold text-white">Log Hydration Metric (2.5L)</span>
+                </div>
+                <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-[10px] font-bold text-blue-300">
+                  +30 XP
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3">
+                <div className="flex items-center gap-2.5">
+                  <Zap className="h-4 w-4 text-amber-400 shrink-0" />
+                  <span className="text-xs font-semibold text-white">Maintain Net Cashflow</span>
+                </div>
+                <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
+                  +50 XP
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3">
+                <div className="flex items-center gap-2.5">
+                  <Zap className="h-4 w-4 text-purple-400 shrink-0" />
+                  <span className="text-xs font-semibold text-white">Write Daily Story Reflection</span>
+                </div>
+                <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[10px] font-bold text-purple-300">
+                  +60 XP
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

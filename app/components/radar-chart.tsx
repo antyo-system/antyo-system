@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Shield, Trophy } from "lucide-react";
+import { Sparkles, Trophy, Flame } from "lucide-react";
 
 export interface PillarData {
   name: string;
@@ -69,45 +69,45 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
   );
 
   const getRankBadge = (score: number) => {
-    if (score >= 90) return { rank: "S-CLASS", color: "text-amber-400 bg-amber-950/60 border-amber-500/40" };
-    if (score >= 80) return { rank: "A-CLASS", color: "text-indigo-400 bg-indigo-950/60 border-indigo-500/40" };
-    if (score >= 70) return { rank: "B-CLASS", color: "text-blue-400 bg-blue-950/60 border-blue-500/40" };
+    if (score >= 90) return { rank: "S-CLASS", color: "text-amber-300 bg-amber-950/80 border-amber-500/50" };
+    if (score >= 80) return { rank: "A-CLASS", color: "text-indigo-300 bg-indigo-950/80 border-indigo-500/50" };
+    if (score >= 70) return { rank: "B-CLASS", color: "text-blue-300 bg-blue-950/80 border-blue-500/50" };
     return { rank: "C-CLASS", color: "text-zinc-400 bg-zinc-900 border-zinc-700" };
   };
 
   const rankInfo = getRankBadge(avgScore);
 
   return (
-    <div className="relative flex flex-col items-center rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+    <div className="relative flex flex-col items-center rounded-3xl border border-indigo-500/30 bg-zinc-900/90 p-6 shadow-2xl backdrop-blur-xl">
       {/* RPG HUD Header */}
-      <div className="flex w-full items-center justify-between pb-2 border-b border-zinc-100 dark:border-zinc-800 mb-2">
+      <div className="flex w-full items-center justify-between pb-3 border-b border-zinc-800 mb-2">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-indigo-500" />
-          <h3 className="text-sm font-bold tracking-wide text-zinc-900 dark:text-zinc-100 uppercase">
-            5 Life Pillars — RPG Radar Stat Wheel
+          <Sparkles className="h-5 w-5 text-indigo-400 animate-pulse" />
+          <h3 className="text-xs font-mono font-extrabold tracking-widest text-zinc-100 uppercase">
+            5 LIFE PILLARS — RPG RADAR STAT WHEEL
           </h3>
         </div>
 
-        <div className={`flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-extrabold tracking-wider ${rankInfo.color}`}>
+        <div className={`flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-mono font-extrabold tracking-wider shadow-md ${rankInfo.color}`}>
           <Trophy className="h-3.5 w-3.5" />
           <span>{rankInfo.rank} ({avgScore} PTS)</span>
         </div>
       </div>
 
       {/* SVG Container */}
-      <div className="relative flex items-center justify-center my-2">
+      <div className="relative flex items-center justify-center my-3">
         <svg width={size} height={size} className="overflow-visible">
           <defs>
             {/* Gradient Fill for Radar Polygon */}
             <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.6" />
-              <stop offset="60%" stopColor="#a855f7" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
+              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.75" />
+              <stop offset="60%" stopColor="#a855f7" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#ec4899" stopOpacity="0.2" />
             </radialGradient>
 
             {/* Neon Glow Filter */}
             <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feGaussianBlur stdDeviation="5" result="blur" />
               <feComposite in="SourceGraphic" in2="blur" operator="over" />
             </filter>
           </defs>
@@ -117,7 +117,7 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
             <polygon
               key={idx}
               points={getGridPolygonPoints(lvl)}
-              className="fill-none stroke-zinc-200 dark:stroke-zinc-800/80"
+              className="fill-none stroke-zinc-700/70"
               strokeWidth={idx === levels.length - 1 ? "1.5" : "1"}
               strokeDasharray={idx < levels.length - 1 ? "3 3" : undefined}
             />
@@ -133,8 +133,8 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
                 y1={center}
                 x2={x}
                 y2={y}
-                className="stroke-zinc-200 dark:stroke-zinc-800"
-                strokeWidth="1"
+                className="stroke-zinc-800"
+                strokeWidth="1.5"
               />
             );
           })}
@@ -143,8 +143,8 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
           <polygon
             points={dataPolygonPoints}
             fill="url(#radarGlow)"
-            className="stroke-indigo-500 dark:stroke-indigo-400 transition-all duration-500 ease-out"
-            strokeWidth="2.5"
+            className="stroke-indigo-400 transition-all duration-500 ease-out"
+            strokeWidth="3"
             filter="url(#neonGlow)"
           />
 
@@ -160,11 +160,11 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
                 <circle
                   cx={point.x}
                   cy={point.y}
-                  r={isHovered ? 7 : 5}
+                  r={isHovered ? 8 : 5.5}
                   className={`cursor-pointer transition-all duration-200 ${
                     isHovered
-                      ? "fill-amber-400 stroke-white stroke-2 shadow-lg"
-                      : "fill-indigo-500 stroke-zinc-900 stroke-2"
+                      ? "fill-amber-300 stroke-white stroke-2 shadow-lg"
+                      : "fill-indigo-400 stroke-zinc-950 stroke-2"
                   }`}
                 />
 
@@ -178,10 +178,10 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
                 >
                   <div
                     className={`flex cursor-pointer flex-col items-center justify-center rounded-xl p-1 text-center transition-transform duration-200 ${
-                      isHovered ? "scale-110 shadow-md" : ""
+                      isHovered ? "scale-110 shadow-lg" : ""
                     }`}
                   >
-                    <span className="text-[11px] font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-1">
+                    <span className="text-[11px] font-bold tracking-tight text-white flex items-center gap-1">
                       <span>{pillar.icon}</span>
                       <span>{pillar.name}</span>
                     </span>
@@ -197,7 +197,7 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
       </div>
 
       {/* Footer Pillar Badges Row */}
-      <div className="mt-2 flex w-full flex-wrap items-center justify-center gap-2 border-t border-zinc-100 dark:border-zinc-800/80 pt-3">
+      <div className="mt-2 flex w-full flex-wrap items-center justify-center gap-2 border-t border-zinc-800 pt-3">
         {pillars.map((p, idx) => (
           <div
             key={p.key}
@@ -205,15 +205,15 @@ export default function RadarChart({ pillars = DEFAULT_PILLARS }: RadarChartProp
             onMouseLeave={() => setHoveredIndex(null)}
             className={`flex items-center gap-1.5 rounded-xl border px-2.5 py-1 transition-all cursor-pointer ${
               hoveredIndex === idx
-                ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/60 shadow-sm"
-                : "border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950/50"
+                ? "border-indigo-500 bg-indigo-950/80 shadow-md scale-105"
+                : "border-zinc-800 bg-zinc-950/80"
             }`}
           >
             <span className="text-xs">{p.icon}</span>
-            <span className="text-[11px] font-semibold text-zinc-800 dark:text-zinc-200">
+            <span className="text-[11px] font-semibold text-zinc-300">
               {p.name}:
             </span>
-            <span className={`text-[11px] font-extrabold ${p.color}`}>{p.score}%</span>
+            <span className={`text-[11px] font-mono font-black ${p.color}`}>{p.score}%</span>
           </div>
         ))}
       </div>
